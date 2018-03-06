@@ -1,0 +1,33 @@
+/* The sidenav */
+/* .sidenav {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(211, 217, 221);
+  overflow-x: hidden;
+  padding-top: 20px;
+  padding-left: 30px;
+} */
+
+/* Page content */
+/* .main {
+  //margin-left: 300px; Same as the width of the sidenav
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #2196F3;
+  overflow-x: hidden;
+  padding-top: 20px;
+} */
+
+.body{margin-top:50px;}
+.glyphicon { margin-right:10px; }
+.panel-body { padding:0px; }
+.panel-body table tr td { padding-left: 15px }
+.panel-body .table {margin-bottom: 0px }

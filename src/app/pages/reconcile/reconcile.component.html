@@ -1,0 +1,218 @@
+<form class="form-horizontal">
+
+  <div class="row">
+    <!-- <div class="form-group col-md-4">
+        <button type="button" class="btn btn-primary">reconcileobject
+          <span class="badge badge-pill badge-primary"></span>
+        </button>
+      </div> -->
+    <h2>Reconciliation</h2>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-5">
+      <!-- <button type="button" class="btn btn-primary">LHS
+          <span class="badge badge-pill badge-primary"></span>
+        </button> -->
+      <h3>LHS</h3>
+      <hr>
+    </div>
+
+    <div class="col-md-5">
+      <!-- <button type="button" class="btn btn-primary">RHS
+          <span class="badge badge-pill badge-primary"></span>
+        </button> -->
+      <h3>RHS</h3>
+      <hr>
+    </div>
+
+
+
+  </div>
+
+
+
+
+  <div class="row">
+    <h4>Data Source</h4>
+    <hr>
+  </div>
+
+
+
+  <div class="row ">
+
+    <!-- form-group -->
+    <div class=" col-md-5">
+      <input type="Text" [(ngModel)]="reconcileobject.Source" [ngModelOptions]="{standalone: true}" class="form-control" id="reconcileobject.Source"
+        placeholder="Source.. " required>
+    </div>
+    <div class=" col-md-5">
+      <input type="Text" [(ngModel)]="reconcileobject.Target" [ngModelOptions]="{standalone: true}" class="form-control" id="reconcileobject.Target"
+        placeholder="Target.. " required>
+    </div>
+  </div>
+  <!-- </form> -->
+
+  <br/>
+  <!-- ********************  COmparison- Key *****************************-->
+  <div class="row">
+    <h4>Comparison Keys</h4>
+    <hr>
+  </div>
+
+  <div class="row">
+    <!-- <div class="table row"> -->
+    <td class="col-md-5">
+      <input class="form-control" type="text" id="newAttributeLeft" [(ngModel)]="newAttribute.Left" [ngModelOptions]="{standalone: true}"
+        placeholder="LHS.. " name="newAttributeLeft" />
+    </td>
+    <td class="col-md-5">
+      <input class="form-control" type="text" id="newAttributeRight" [(ngModel)]="newAttribute.Right" [ngModelOptions]="{standalone: true}"
+        placeholder="RHS.. " name="newAttributeRight" />
+    </td>
+
+    <td class="col-md-2">
+      <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
+    </td>
+    <!-- </div> -->
+  </div>
+
+  <br/>
+
+  <table class="table table-hover">
+
+    <thead>
+      <tr>
+        <th class="col-md-5">ComparisonKey_LHS</th>
+        <th class="col-md-5">ComparisonKey_RHS</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let field of reconcileobject.ComparisonKey; let i = index">
+        <td class="col-md-5">
+          <input [(ngModel)]="field.Left" [ngModelOptions]="{standalone: true}" class="form-control" type="text" name="{{field.Left}}"
+          />
+        </td>
+        <td class="col-md-5">
+          <input [(ngModel)]="field.Right" [ngModelOptions]="{standalone: true}" class="form-control" type="text" name="{{field.Right}}"
+          />
+        </td>
+        <td class="col-md-2">
+          <button class="btn btn-default" type="button" (click)="deleteFieldValue(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <!-- ********************  Reconcile - Key *****************************-->
+  <div class="row">
+    <h4> Reconcile Keys : NumericColumns </h4>
+    <hr>
+  </div>
+
+  <div class="row">
+    <!-- <div class="table row"> -->
+    <td class="col-md-5">
+      <input class="form-control" type="text" id="newAttributeRecNumLeft" [(ngModel)]="newAttributeRecNum.Left" [ngModelOptions]="{standalone: true}"
+        placeholder="LHS.. " name="newAttributeRecNumLeft" />
+    </td>
+    <td class="col-md-5">
+      <input class="form-control" type="text" id="newAttributeRecNumRight" [(ngModel)]="newAttributeRecNum.Right" [ngModelOptions]="{standalone: true}"
+        placeholder="RHS.. " name="newAttributeRecNumRight" />
+    </td>
+
+    <td class="col-md-2">
+      <button class="btn btn-default" type="button" (click)="addFieldValueRecNum()">Add</button>
+    </td>
+    <!-- </div> -->
+  </div>
+
+  <br/>
+
+  <table class="table table-hover">
+
+    <thead>
+      <tr>
+        <th class="col-md-5">NumericColumns_LHS</th>
+        <th class="col-md-5">NumericColumns_RHS</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let field of reconcileobject.NumericColumns; let i = index">
+        <td class="col-md-5">
+          <input [(ngModel)]="field.Left" [ngModelOptions]="{standalone: true}" class="form-control" type="text" name="{{field.Left}}"
+          />
+        </td>
+        <td class="col-md-5">
+          <input [(ngModel)]="field.Right" [ngModelOptions]="{standalone: true}" class="form-control" type="text" name="{{field.Right}}"
+          />
+        </td>
+        <td class="col-md-2">
+          <button class="btn btn-default" type="button" (click)="deleteFieldValueRecNum(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+
+  <div class="row ">
+    <div class=" form-group col-md-2 ">
+      <button type="Submit " class="btn btn-primary " (click)="save() ">Submit</button>
+    </div>
+  </div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row">
+      <label>ComparisonKey</label>
+    </div>
+    <div class="row ">
+     
+  
+      <div class="form-group col-md-6">
+        <input type="Text" [(ngModel)]="left" [ngModelOptions]="{standalone: true}" class="form-control" id="ComparisonKeyLeft" placeholder="LHS Value.."
+          required>
+      </div>
+      <div class="form-group col-md-6">
+        <input type="Text" [(ngModel)]="right" [ngModelOptions]="{standalone: true}" class="form-control" id="ComparisonKeyRight"
+          placeholder="RHS Value.." required>
+      </div>
+    </div>
+    <div class="row ">
+      <div class=" form-group col-md-2 ">
+        <button type="Submit " class="btn btn-primary " (click)="AddRow() ">Add Row</button>
+      </div>
+    </div> -->
+<!-- <div class="form-group ">
+        <label for="Source " class="col-md-2 control-label ">Source</label>
+        <div class=" col-md-8 ">
+          <input type="text " class="form-control " [(ngModel)]="this.reconcileobject.Source" [ngModelOptions]="{standalone: true}"
+            id="Source " placeholder="Source.. " required>
+        </div>
+      </div> -->
+
+<!-- <h>reconcileobject : Target</h> -->
+<!-- <div class="form-group ">
+        <label for="Target " class="col-md-2 control-label ">Target</label>
+        <div class=" col-md-8 ">
+          <input type="text " class="form-control " [(ngModel)]="this.reconcileobject.Target" [ngModelOptions]="{standalone: true}"
+            id="Target " placeholder="Target.. " required>
+        </div>
+      </div> -->
+
+<!-- <form class="form-horizontal"> -->

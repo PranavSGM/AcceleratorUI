@@ -1,0 +1,73 @@
+<form class="form-horizontal">
+
+  <!-- <h>DataSource: Type</h> -->
+  <div class="row">
+    <!-- <div class="form-group col-md-4">
+          <button type="button" class="btn btn-primary">Data-Type
+              <span class="badge badge-pill badge-primary">DataBases</span>
+          </button>
+      </div> -->
+    <h3>Data Source : DataBases</h3>
+    <hr>
+  </div>
+
+  <div class="row ">
+    <div class="form-group ">
+      <label for="DataSourceName " class="col-md-2 control-label ">Data-Source Name</label>
+      <div class=" col-md-8 ">
+        <input type="text " class="form-control " [(ngModel)]="databaseobject.DataSourceName" [ngModelOptions]="{standalone: true}"
+          id="DataSourceName " placeholder="Data-Source Name.. " required>
+      </div>
+    </div>
+
+
+    <div class="form-group ">
+      <label for="ConnectionType " class="col-md-2 control-label ">Connection Type</label>
+      <div class=" col-md-8 ">
+        <input type="text " class="form-control " [(ngModel)]="databaseobject.DataBase.ConnectionType" [ngModelOptions]="{standalone: true}"
+          id="ConnectionType " placeholder="Connection Type.. " required>
+      </div>
+    </div>
+
+    <div class="form-group ">
+      <label for="UserName " class="col-md-2 control-label ">User Name</label>
+      <div class=" col-md-8 ">
+        <input type="text " class="form-control " [(ngModel)]="databaseobject.DataBase.UserName" [ngModelOptions]="{standalone: true}"
+          id="UserName " placeholder="User Name.. " required>
+      </div>
+    </div>
+
+    <div class="form-group ">
+      <label for="Password " class="col-md-2 control-label ">Password</label>
+      <div class=" col-md-8 ">
+        <input type="password" class="form-control " [(ngModel)]="databaseobject.DataBase.Password" [ngModelOptions]="{standalone: true}"
+          id="Password " placeholder="Password.. " required>
+      </div>
+    </div>
+
+    <div class="form-group ">
+      <label for="Host " class="col-md-2 control-label ">Host Name</label>
+      <div class=" col-md-8 ">
+        <input type="text" class="form-control " [(ngModel)]="databaseobject.DataBase.Host" [ngModelOptions]="{standalone: true}"
+          id="Host " placeholder="Host Name.. " required>
+      </div>
+    </div>
+
+    <div class="form-group ">
+      <label for="Port " class="col-md-2 control-label ">Port Number</label>
+      <div class=" col-md-8 ">
+        <input type="Number" class="form-control " [(ngModel)]="databaseobject.DataBase.Port" [ngModelOptions]="{standalone: true}"
+          id="Port " placeholder="Port Number.. " required>
+      </div>
+    </div>
+
+    <div class="row ">
+      <div class=" form-group col-md-2 ">
+        <button type="Submit " class="btn btn-primary " (click)="save() ">Submit</button>
+      </div>
+    </div>
+  </div>
+
+
+
+</form>

@@ -1,0 +1,36 @@
+<!-- <div class="list-group">
+    <a class = "list-group-item">Submitted Flows !</a> -->
+<!-- <a []=a.route class="list-group-item active" *ngFor="let a of abc">
+         a.Name
+       </a> -->
+<!-- <a class="list-group-item">File</a> -->
+<!-- <a style="cursor:pointer" routerLink="DataBaseUpdate" class="list-group-item">Data-Base</a> -->
+<!-- <a style="cursor:pointer" (click)="routetodatabase();" class="list-group-item">Data-Base</a>
+    <a class="list-group-item">Reconcile</a>
+    <a class="list-group-item">Store-Data</a> -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 col-md-3">
+      <div class="panel-group" id="List">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <a>Completed Flows !</a>
+            </h3>
+          </div>
+        </div>
+         <!-- *ngFor="let field of reconcileobject.ComparisonKey; let i = index">  -->
+         <a *ngIf = "this.compFlow">
+        <div *ngFor = "let elements of compFlow; let i= index" class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                <a routerLink = "{{elements.routeto}}">{{elements.form}} : {{elements.dsname}}</a>
+              </h3>
+            </div>
+          </div>
+          </a>
+        </div>
+    </div>
+  </div>
+</div>
